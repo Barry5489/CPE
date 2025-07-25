@@ -10,13 +10,12 @@ int main(){
         while(pos != std::string::npos){
             if(DDD){
                 str2.replace(pos,1,"``");
-                DDD = false;
             }else{
                 str2.replace(pos,1,"''");
-                DDD = true;
             }
-            pos = str2.find("\"",+2);
+            pos = str2.find("\"",pos+2);
+            DDD = !DDD;
         }
-        cout<<str2<<endl;
     }
+    cout<<str2<<endl;
 }
